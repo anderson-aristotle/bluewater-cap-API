@@ -13,7 +13,7 @@ useful when user need a way to manage their life's lists of things to accomplish
     - Heroku: https://bucketlist-app-api.herokuapp.com/
 
 ## Entity Resource Diagram
-    https://i.imgur.com/sVMAU3S.jpg
+  [ERD](https://i.imgur.com/sVMAU3S.jpg)
 
 ## Technologies used
     - Ajax
@@ -52,10 +52,5 @@ useful when user need a way to manage their life's lists of things to accomplish
     '/change-password' --> router.patch()
     '/list-items' --> router.get(), router.post()
     '/list-items/:id' --> router.get(), router.patch(), router.delete()
-
-## Members
-    * [Allan Oliveira]
-    * [Henrique Oliveira]
-    * [Rex]
-    * [Rish]
-    * [Vicky]
+    '/account' --> router.get(), router.post()
+    '/account/:id' --> router.get(), router.patch(), router.delete()
