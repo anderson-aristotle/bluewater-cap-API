@@ -1,4 +1,4 @@
-# Bucket List Back End API
+# Bluewater Capital API
 This is the back-end repository for the bucketlist project. This website allows
 users to view their bucket list, where they can add, update, and delete items.
 
@@ -13,7 +13,7 @@ useful when user need a way to manage their life's lists of things to accomplish
     *  Heroku: https://bucketlist-app-api.herokuapp.com/
 
 ## Entity Resource Diagram
-      [ERD](https://i.imgur.com/sVMAU3S.jpg)
+    [ERD](https://i.imgur.com/sVMAU3S.jpg)
 
 ## Technologies used
     * Ajax
@@ -41,9 +41,7 @@ useful when user need a way to manage their life's lists of things to accomplish
 
 
 ## Planning, process, and problem-solving strategies
-    In future iterations, we would like to add some animation, especially in the
-    bucket list title. Ideally, we'd also spend more time on styling as well; we
-    used Bootstrap templates, and customized them just enough for MVP.
+
 
 ## Routes and Methods
     * '/sign-up' --> router.post()
