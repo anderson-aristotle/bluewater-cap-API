@@ -4,7 +4,7 @@ const express = require('express')
 const passport = require('passport')
 
 // pull in Mongoose model for accounts
-const Account = require('../models/list-item')
+const Account = require('../models/account')
 
 // this is a collection of methods that help us detect situations when we need
 // to throw a custom error
@@ -29,7 +29,7 @@ const router = express.Router()
 
 // INDEX
 // GET /accounts
-router.get('/list-items', requireToken, (req, res, next) => {
+router.get('/accounts', requireToken, (req, res, next) => {
   Account.find()
     .then(accounts => {
       // `accounts` will be an array of Mongoose documents
@@ -45,7 +45,7 @@ router.get('/list-items', requireToken, (req, res, next) => {
 
 // SHOW
 // GET /accounts/5a7db6c74d55bc51bdf39793
-router.get('/list-items/:id', requireToken, (req, res, next) => {
+router.get('/accounts/:id', requireToken, (req, res, next) => {
   // req.params.id will be set based on the `:id` in the route
   Account.findById(req.params.id)
     .then(handle404)
@@ -57,7 +57,7 @@ router.get('/list-items/:id', requireToken, (req, res, next) => {
 
 // CREATE
 // POST /accounts
-router.post('/list-items', requireToken, (req, res, next) => {
+router.post('/accounts', requireToken, (req, res, next) => {
   // set owner of new account to be current user
   req.body.account.owner = req.user.id
 
@@ -74,7 +74,7 @@ router.post('/list-items', requireToken, (req, res, next) => {
 
 // UPDATE
 // PATCH /accounts/5a7db6c74d55bc51bdf39793
-router.patch('/list-items/:id', requireToken, removeBlanks, (req, res, next) => {
+router.patch('/accounts/:id', requireToken, removeBlanks, (req, res, next) => {
   // if the client attempts to change the `owner` property by including a new
   // owner, prevent that by deleting that key/value pair
   delete req.body.account.owner
@@ -97,7 +97,7 @@ router.patch('/list-items/:id', requireToken, removeBlanks, (req, res, next) => 
 
 // DESTROY
 // DELETE /accounts/5a7db6c74d55bc51bdf39793
-router.delete('/list-items/:id', requireToken, (req, res, next) => {
+router.delete('/accounts/:id', requireToken, (req, res, next) => {
   Account.findById(req.params.id)
     .then(handle404)
     .then(account => {
