@@ -7,7 +7,6 @@ const accountSchema = new mongoose.Schema({
   },
   number: {
     type: Number,
-  account: {
     required: true,
     integer: true,
     validate: {
